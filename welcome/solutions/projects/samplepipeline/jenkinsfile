@@ -34,8 +34,9 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
+        stage('parallel') {
             parallel{
+                stage ('Installation'){
             steps {
                 dir("${PROJECT_HOME}") {
                     script {
@@ -53,6 +54,7 @@ pipeline {
                     }
                 }
             }
+                }
             
                 stage('Hello World') {
             steps {
