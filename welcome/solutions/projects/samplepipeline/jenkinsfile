@@ -63,6 +63,7 @@ pipeline {
         }
 
         }
+        }
         stage('Run Flask Application') {
             steps {
                 dir("${PROJECT_HOME}") {
