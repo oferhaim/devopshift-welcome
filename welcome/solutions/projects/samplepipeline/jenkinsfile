@@ -33,7 +33,9 @@ pipeline {
                 }
             }
         }
+
         stage('Install Dependencies') {
+            parallel{
             steps {
                 dir("${PROJECT_HOME}") {
                     script {
@@ -51,6 +53,15 @@ pipeline {
                     }
                 }
             }
+            
+                stage('Hello World') {
+            steps {
+                    echo "Hello"
+                    sleep 10
+
+            }
+        }
+
         }
         stage('Run Flask Application') {
             steps {
