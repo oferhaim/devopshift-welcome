@@ -36,7 +36,7 @@ pipeline {
 
         stage('parallel') {
             parallel{
-                stage ('Installation'){
+                stage ('Install depencencies'){
             steps {
                 dir("${PROJECT_HOME}") {
                     script {
